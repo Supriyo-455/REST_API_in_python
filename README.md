@@ -18,13 +18,13 @@
 
 
 ### To get a specific destination
-#### you have to add '/id' to get specific destination
+you have to add '/id' to get specific destination
 >methods = GET
 >https://destinationapi1124.herokuapp.com/destinations/<id>
   
 
 ### To delete specific destination
-#### you have to add '/id' to delete specific destination
+you have to add '/id' to delete specific destination
 >methods = DELETE
 >https://destinationapi1124.herokuapp.com/destinations/<id>
   
