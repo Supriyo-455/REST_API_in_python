@@ -39,7 +39,7 @@
   
  ### To get a welcome message
  >methods = GET
- >https://destinationapi1124.herokuapp.com/message
+ >https://destinationapi1124.herokuapp.com/messages
   
   
  ### To populate the db with some demo data
