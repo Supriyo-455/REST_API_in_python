@@ -79,6 +79,21 @@ def delete(id):
     return {"message": "Deleted!"}
 
 
+@app.route('/destination/<id>', methods=['PUT'])
+def updateDestination(id):
+    destination = Destination.query.get(id)
+    if destination is None:
+        return {"error": "not found"}
+
+    # Update the data
+    destination.city = request.json['city']
+    destination.description = request.json['description']
+    destination.country = request.json['country']
+
+    # commit the changes
+    db.session.commit()
+
+
 @app.route('/')
 def home():
     # Return welcome message to the client
