@@ -35,7 +35,7 @@ def get_destinations():
                      "country": destination.country}
         output.append(json_data)
 
-    return {'destinations': output}
+    return output
 
 
 @app.route('/destinations/<id>', methods=['GET'])
