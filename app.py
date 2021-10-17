@@ -79,7 +79,7 @@ def delete(id):
     return {"message": "Deleted!"}
 
 
-@app.route('/destination/<id>', methods=['PUT'])
+@app.route('/destinations/<id>', methods=['PUT'])
 def updateDestination(id):
     destination = Destination.query.get(id)
     if destination is None:
@@ -92,6 +92,11 @@ def updateDestination(id):
 
     # commit the changes
     db.session.commit()
+
+    return {"id": destination.id,
+            "city": destination.city,
+            "description": destination.description,
+            "country": destination.country}
 
 
 @app.route('/')
