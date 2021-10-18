@@ -29,6 +29,10 @@ def get_destinations():
     data = Destination.query.all()
     output = []
 
+    # HTTP HEADERS TO WORK WITH
+    # headers = []
+    # headers.append(request.headers['x-device-type'])
+
     if request.args:
         # query string nicely serialized as a python dictionary
         args = request.args
