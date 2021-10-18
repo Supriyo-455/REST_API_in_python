@@ -21,7 +21,7 @@ class Destination(db.Model):
 
 @app.route('/messages', methods=['GET'])
 def get_message():
-    return message
+    return {"message": message}
 
 
 @app.route('/destinations', methods=['GET'])
