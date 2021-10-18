@@ -33,6 +33,7 @@ def get_destinations():
         # query string nicely serialized as a python dictionary
         args = request.args
         country = args.get('country')
+        count = args.get('count')
 
         for destination in data:
             if destination.country == country:
@@ -41,6 +42,10 @@ def get_destinations():
                              "description": destination.description,
                              "country": destination.country}
                 output.append(json_data)
+
+        if count != None:
+            return output[int(count)-1]
+
         return {'destinations': output}
 
     for destination in data:
