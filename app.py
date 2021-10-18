@@ -28,6 +28,21 @@ def get_message():
 def get_destinations():
     data = Destination.query.all()
     output = []
+
+    if request.args:
+        # query string nicely serialized as a python dictionary
+        args = request.args
+        country = args.get('country')
+
+        for destination in data:
+            if destination.country == country:
+                json_data = {"id": destination.id,
+                             "city": destination.city,
+                             "description": destination.description,
+                             "country": destination.country}
+                output.append(json_data)
+        return {'destinations': output}
+
     for destination in data:
         json_data = {"id": destination.id,
                      "city": destination.city,
