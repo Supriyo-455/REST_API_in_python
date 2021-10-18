@@ -44,7 +44,7 @@ def get_destinations():
                 output.append(json_data)
 
         if count != None:
-            return {'destinations': output[int(count)-1]}
+            return {'destinations': [output[int(count)-1]]}
 
         return {'destinations': output}
 
